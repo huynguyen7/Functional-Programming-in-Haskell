@@ -36,7 +36,6 @@ foldrT f x (Node val left right) = f val (foldrT f (foldrT f x left) right)
 
 
 -- Q(2)
--- In this implementation, all the leaves are numbers / Int.
 data ExprT
     = Leaf Double
     | Add ExprT ExprT
