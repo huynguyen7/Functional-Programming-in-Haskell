@@ -32,3 +32,11 @@ foldrI f z (x:xs) = f x (foldrI f z xs)
 foldlI :: (b -> a -> b) -> b -> [a] -> b
 foldlI f z [] = z
 foldlI f z (x:xs) = foldlI f (f z x) xs
+
+-- foldl (/) 4 [3,2,5]
+-- -> ((/) ((/) ((/) 4 3) 2) 5)
+-- -> 0.133
+--
+-- foldr (/) 4 [3,2,5]
+-- -> (/) 3 ((/) 2 ((/) 5 (4)))
+-- -> 1.875
